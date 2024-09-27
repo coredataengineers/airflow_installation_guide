@@ -30,7 +30,7 @@ This command will enable the features necessary to run WSL and install the Ubunt
 
 Check if WSL is now installed using the ```wsl -l -v``` command
 
-### Directing to Linux Environment (WSL)
+### Directing to Linux environment (WSL)
 
 Open VS Code and connect to WSL as Shown below:
 
