@@ -8,12 +8,13 @@
 
 ## For Windows OS user
 Follow all the steps below to setup a linux environment, if you are a Windows OS user.
+
 ### Check if WSL is installed
 run the following command in PowerShell or Windows Command Prompt
 ```
 wsl -l -v
 ```
-You should have something similar to the below if you have WSL installed:
+You should have something similar to the below if you have WSL installed
 
 ![wsl check](/airflow_installation_guide/images/wsl_check.png)
 
