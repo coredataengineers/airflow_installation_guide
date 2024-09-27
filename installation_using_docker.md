@@ -1,0 +1,96 @@
+# Airflow Installation Using Docker
+## Prerequisites:
+First, make sure you have installed Docker Desktop and Visual Studio. If not, take a look at these links:
+
+[Get Docker](https://docs.docker.com/get-docker/)
+
+[Get Visual Studio Code](https://code.visualstudio.com/download)
+
+The minimum memory(RAM) required by Docker to get Airflow up and running is at least 4gb. You can check if you have enough memory by running this command
+
+```
+docker run --rm "debian:bookworm-slim" bash -c 'numfmt --to iec $(echo $(($(getconf _PHYS_PAGES) * $(getconf PAGE_SIZE))))'
+```
+
+![ram_check](/airflow_installation_guide/images/ram_check.png)
+
+## Step 1: Open your Terminal
+Open your Terminal(Mac) or GitBash (windows) and change directory to your Documents folder
+
+## Step 2: Create a folder
+Create a folder airflow (or any name you want) in your Documents folder and change directory to the folder
+```
+mkdir airflow
+```
+```
+cd airflow
+```
+
+## Step 3: Fetch docker-compose.yaml
+Fetch the docker-compose.yaml file by running the below curl command
+
+```
+curl -LfO 'https://airflow.apache.org/docs/apache-airflow/2.10.1/docker-compose.yaml'
+```
+
+## Step 4: Open Visual Studio Code
+Open Visual Studio Code by typing the command 
+```
+code .
+```
+You should have something like this
+
+![vscode](/airflow_installation_guide/images/vscode.png)
+
+## Step 5: create a .env file
+Right click below docker-compose.yml and create a new file .env (don't forget the dot before env)
+
+## Step 6: Add AIRFLOW_UID to .env
+In this file add the following line and save the file
+```
+AIRFLOW_UID=50000
+```
+
+![env](/airflow_installation_guide/images/env.png)
+
+## Step 7:  Open new Terminal
+Go at the top bar of Visual Studio Code -> Terminal -> New Terminal
+
+![terminal](/airflow_installation_guide/images/terminal.png)
+
+## Step 8: Run database migrations
+In your new terminal at the bottom of Visual Studio Code, run the following command to run database migrations and create the first user account
+
+```
+docker compose up airflow-init
+```
+
+## Step 9: Start all services
+Run this command to start all services
+```
+docker-compose up -d
+```
+
+![docker_compose_up](/airflow_installation_guide/images/docker_compose_up.png)
+
+You will see many lines scrolled, wait until it's done. Docker is downloading Airflow to run it. It can take up to 5 mins depending on your connection speed. If Docker raises an error saying it can't download the docker image, ensure you are not behind a proxy/vpn or corporate network. You may need to use your personal connection to make it work. At the end, you should end up with something like this
+
+![services_started](/airflow_installation_guide/images/services_started.png)
+
+## Step 10: Check containers status
+Open a new terminal and do ```docker ps``` All your containers status should be healthy as shown below
+
+![docker_ps](/airflow_installation_guide/images/docker_ps.png)
+
+***Well done, you've just installed Apache Airflow with Docker! 🎉***
+
+Open your web browser and go to localhost:8080, you should see the login page as shown below
+
+![login](/airflow_installation_guide/images/login.png)
+
+Login with 
+```
+username: airflow 
+password: airflow
+```
+***Congratulations!!!***
