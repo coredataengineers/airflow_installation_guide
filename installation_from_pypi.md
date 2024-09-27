@@ -16,7 +16,7 @@ wsl -l -v
 ```
 You should have something similar to the below if you have WSL installed
 
-![wsl check](/airflow_installation_guide/images/wsl_check.png)
+![wsl_check](images/wsl_check.png)
 
 ### If you don’t have wsl installed, follow the below steps:
 Prerequisites:
