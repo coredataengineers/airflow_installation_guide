@@ -34,20 +34,20 @@ Check if WSL is now installed using the ```wsl -l -v``` command
 
 Open VS Code and connect to WSL as Shown below:
 
-![wsl connect](/airflow_installation_guide/images/wsl_connect.png)
+![wsl connect](images/wsl_connect.png)
 
 Click on connect to WSL
 
-![wsl connect 2](/airflow_installation_guide/images/wsl_connect_2.png)
+![wsl connect 2](images/wsl_connect_2.png)
 
 ## Step 0: Open a new terminal
 Go at the top bar of Visual Studio Code -> Terminal -> New Terminal
 
-![new terminal](/airflow_installation_guide/images/new_terminal.png)
+![new terminal](images/new_terminal.png)
 
 ## Step 1: Create a folder airflow (or any name you want)
 
-![new directory](/airflow_installation_guide/images/mkdir.png)
+![new directory](images/mkdir.png)
 
 ## Step 2: Go into the airflow folder
 ```
@@ -73,7 +73,7 @@ source <virtualenvname>/bin/activate
 ```
 If your folder is not open already, click on open folder and search for your folder name, then click OK twice
 
-![Venv](/airflow_installation_guide/images/venv.png)
+![Venv](images/venv.png)
 
 ## Step 5: Install Apache Airflow packages
 Run the following command to install Airflow
@@ -88,11 +88,11 @@ Please refer to the documentation [here](https://airflow.apache.org/docs/apache-
 
 Navigate to your virtual environment and run ```pwd``` in your Terminal to get the current directory.
 
-![pwd](/airflow_installation_guide/images/pwd.png)
+![pwd](images/pwd.png)
 
 Go to bin folder inside the virtual environment created and open the activate file
 
-![activate_file](/airflow_installation_guide/images/activate_file.png)
+![activate_file](images/activate_file.png)
 
 Edit the activate file by adding the following commands at the end of the lines and save:
 
@@ -103,7 +103,7 @@ APP_ENV=local
 export APP_ENV
 ```
 
-![env_variable](/airflow_installation_guide/images/env_variable.png)
+![env_variable](images/env_variable.png)
 
 After editing the bin, deactivate and reactivate the virtual environment by using the following command:
 
@@ -117,12 +117,12 @@ source <virtualenvname>/bin/activate
 ## Step 7: Select your Python Interpreter
 Press CTRL/CMD + SHIFT + P in VSCode. It will open up the command palette. Type Select Interpreter from the command palette
 
-![interpreter](/airflow_installation_guide/images/interpreter.png)
+![interpreter](images/interpreter.png)
 
 Select the python interpreter which is inside the virtual environment. In this example /airflow/bin/python (1st option and it is the recommended)
 
 
-![select_interpreter](/airflow_installation_guide/images/select_interpreter.png)
+![select_interpreter](images/select_interpreter.png)
 
 ## Step 8: Initialize the database
 
@@ -144,7 +144,7 @@ You can change the youremail@gmail.com in the command to your actual email and y
 airflow users list
 ```
 
-![airflow_users](/airflow_installation_guide/images/airflow_users.png)
+![airflow_users](images/airflow_users.png)
 
 ## Step 11: Launch the Webserver
 
@@ -164,7 +164,7 @@ airflow scheduler
 
 Open web browser and enter http://localhost:8080/. The following window will be displayed which confirms successful local airflow installation
 
-![web_interface](/airflow_installation_guide/images/web_interface.png)
+![web_interface](images/web_interface.png)
 
 Login with the username and password created earlier:
 
@@ -172,7 +172,7 @@ Username: admin
 
 Password: admin
 
-![logged_in](/airflow_installation_guide/images/logged_in.png)
+![logged_in](images/logged_in.png)
 
 **Congratulations! You have successfully installed Airflow**
 
@@ -183,17 +183,17 @@ Create a dags folder as shown below. Also verify the dags folder path inside air
 mkdir dags
 ```
 
-![dags_folder](/airflow_installation_guide/images/dags_folder.png)
+![dags_folder](images/dags_folder.png)
 
 Verify the dags folder path is correctly set in airflow.cfg file
 
-![dags_cfg](/airflow_installation_guide/images/dags_cfg.png)
+![dags_cfg](images/dags_cfg.png)
 
 ## Step 15: Enable test connection if needed
 
 To be able to test connections from the airflow UI, enable test_connection in **airflow.cfg file** as shown below. By default, it is disabled. Edit airflow.cfg file and change the test_connection variable from Disabled to Enabled then save. Restart the webserver and scheduler after performing this change for it to take effect.
 
-![test_connections](/airflow_installation_guide/images/test_connections.png)
+![test_connections](images/test_connections.png)
 
 **The End**
 
