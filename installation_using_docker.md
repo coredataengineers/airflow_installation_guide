@@ -1,6 +1,6 @@
 # Airflow Installation Using Docker
 ## Prerequisites:
-First, make sure you have installed Docker Desktop and Visual Studio. If not, take a look at these links:
+First, make sure you have installed Docker Desktop and Visual Studio code. If not, take a look at these links:
 
 [Get Docker](https://docs.docker.com/get-docker/)
 
