@@ -1,4 +1,5 @@
 # How to Configure VS Code to Easily Develop Airflow DAGs with Docker
+By default Vscode does not have access to Airflow running inside docker container. This setup will help you overcome import errors in the code editor and enable auto completion for your code for smooth dag development.
 
 ## Prerequisite
 

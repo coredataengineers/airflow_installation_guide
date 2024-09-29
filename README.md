@@ -1,6 +1,11 @@
 # Airflow Installation Guide
 This repository contains guides on different approaches of installing Apache Airflow.
 
-[Using Docker](https://github.com/dataengineering-community/airflow_installation_guide/blob/main/installation_using_docker.md)
+[Install Airflow Using Docker](installation_using_docker.md)
 
-[Using pip install](https://github.com/dataengineering-community/airflow_installation_guide/blob/main/installation_from_pypi.md)
+[Install Airflow Using pip install](installation_from_pypi.md)
+
+
+If you installed Airflow with Docker, you can follow this guide to configure VScode to easily develop Airflow DAGs with Docker
+
+[VScode Setup](configure_vscode_for_airflow_docker.md)
